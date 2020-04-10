@@ -17,3 +17,70 @@
     <div class="right-button"> > </div>
   </div>
 */
+let currentIndex = 0;
+
+function createCarousel() {
+  const carousel = document.createElement('div')
+  carousel.classList.add('carousel');
+
+    const leftButton = document.createElement('div');
+    leftButton.classList.add('left-button');
+    carousel.appendChild(leftButton);
+
+    leftButton.addEventListener('click', e => {
+      currentIndex = (currentIndex === 0) ? 3 : --currentIndex;
+      displayImage();
+    });
+
+    const mountains = document.createElement('img');
+    mountains.src = './assets/carousel/mountains.jpeg';
+    mountains.dataset.index = 0;
+    carousel.appendChild(mountains);
+
+    const computer = document.createElement('img');
+    computer.src = './assets/carousel/computer.jpeg';
+    computer.dataset.index = 1;
+    carousel.appendChild(computer);
+
+    const trees = document.createElement('img');
+    trees.src = './assets/carousel/trees.jpeg';
+    trees.dataset.index = 2;
+    carousel.appendChild(trees);
+
+    const turntable = document.createElement('img');
+    turntable.src = './assets/carousel/turntable.jpeg';
+    turntable.dataset.index = 3;
+    carousel.appendChild(turntable);
+
+    const rightButton = document.createElement('div');
+    rightButton.classList.add('right-button');
+    carousel.appendChild(rightButton);
+
+    rightButton.addEventListener('click', e => {
+      // if (currentIndex === 3) currentIndex = 0;
+      currentIndex = (currentIndex === 3) ? 0 : ++currentIndex;
+      displayImage();
+    });
+
+  return carousel;
+}
+
+document.querySelector('.carousel-container').appendChild(createCarousel());
+
+
+
+
+
+function displayImage() {
+  const imgs = document.querySelectorAll('.carousel img');
+  // console.log(imgs);
+  imgs.forEach(img => {
+    if(img.dataset.index == currentIndex) {
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
+    }
+  })
+}
+
+displayImage();

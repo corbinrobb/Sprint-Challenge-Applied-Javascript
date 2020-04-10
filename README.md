@@ -30,13 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+  The DOM stands for document object model and it is a language agnostic representation of the markup, style and code that is rendered inside of a browser.
+
+
 2. What is an event?
+
+  An event is a thing that the user does to something on the webpage, like a click, keydown, scroll, select and more.
 
 3. What is an event listener?
 
+  An event listener is a function or procedure that waits until specified events fire and then do things when they happen.
+
 4. Why would we convert a NodeList into an Array?
 
+  To get access to all of the methods that are available for arrays.
+
 5. What is a component?
+
+  A components is a function or class that will write a block of HTML. It usually will take unknown data and pieces of the site dynamically. 
 
 ### Git Set up
 
