@@ -57,7 +57,6 @@ function createCarousel() {
     carousel.appendChild(rightButton);
 
     rightButton.addEventListener('click', e => {
-      // if (currentIndex === 3) currentIndex = 0;
       currentIndex = (currentIndex === 3) ? 0 : ++currentIndex;
       displayImage();
     });
@@ -73,7 +72,6 @@ document.querySelector('.carousel-container').appendChild(createCarousel());
 
 function displayImage() {
   const imgs = document.querySelectorAll('.carousel img');
-  // console.log(imgs);
   imgs.forEach(img => {
     if(img.dataset.index == currentIndex) {
       img.style.display = 'block';
